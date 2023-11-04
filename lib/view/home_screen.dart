@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:studentlistapi/controller/userlist_provider.dart';
+import 'package:studentlistapi/helpers/colors.dart';
+import 'package:studentlistapi/helpers/styles.dart';
 import 'package:studentlistapi/view/userdetails_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Center(child: Text( 'User List',style:TextStyle(fontWeight:FontWeight.bold) ,))),
+      appBar: AppBar(title:Center(child: Text( 'User List',style:appBarStyle ,))),
       body: Consumer<UserListProvider>(
         builder: (context, value, child) {
           return   ListView.builder(
@@ -32,12 +34,12 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                    decoration: BoxDecoration(
-                    color: Colors.teal,
+                    color:kTealColor,
                     borderRadius: BorderRadius.circular(10)
                   ),
                   child: ListTile(
-                    title: Text('${value.studentList[index].name}',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold ),),
-                    subtitle: Text('${value.studentList[index].phone}',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold ),),
+                    title: Text('${value.studentList[index].name}',style: homeSceenTextStyle,),
+                    subtitle: Text('${value.studentList[index].phone}',style:homeSceenTextStyle,),
                   ),
                 ),
               ),

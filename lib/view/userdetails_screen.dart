@@ -1,4 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:studentlistapi/helpers/colors.dart';
+import 'package:studentlistapi/helpers/styles.dart';
 
 class UserDetailsScreen extends StatelessWidget {
   String username;
@@ -23,13 +27,18 @@ class UserDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Details',style: TextStyle(fontWeight:FontWeight.bold),)),),
+        actions: [
+          SizedBox(width: 30,)
+        ],
+        title: Center(
+          
+          child: Text('Details',style: appBarStyle)),),
 
       body: Center(
         child: Container(
           
           decoration: BoxDecoration(
-            color: Colors.teal,
+            color: kTealColor,
             borderRadius: BorderRadius.circular(30)
           ),
           height: 300,
@@ -37,15 +46,15 @@ class UserDetailsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text('username:$username',style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white),),
+              Text('username:$username',style: detailsScreenTextStyle,),
            
-              Text('email:$email',style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white)),
+              Text('email:$email',style: detailsScreenTextStyle),
              
-              Text('city:$city',style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white)),
+              Text('city:$city',style: detailsScreenTextStyle),
               
-              Text('wesite:$website',style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white)),
+              Text('wesite:$website',style: detailsScreenTextStyle),
            
-              Text('company name$companyName',style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white))
+              Text('company name$companyName',style: detailsScreenTextStyle)
             ],
           ),
         ),

@@ -17,9 +17,13 @@ class UserListProvider extends ChangeNotifier{
     var response=await http.get(Uri.parse(url));
     var jsondecode=jsonDecode(response.body);
     studentList=(jsondecode as List).map((e){
+
       return UserModel.fromJson(e as Map<String,dynamic>);
     }).toList();
    notifyListeners();
   }
+
+  
+ 
 
 }

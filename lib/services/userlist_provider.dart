@@ -7,6 +7,6 @@ Dio _dio=Dio();
     String url='https://jsonplaceholder.typicode.com/users';
     var response=await _dio.get(url);
     var jsondecode=response.data;
-    return jsondecode;
+    return jsondecode; 
   }
 }
